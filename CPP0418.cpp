@@ -8,26 +8,22 @@ int main(){
     int t;
     cin >> t;
     while (t--){
-        int n, m;
+        int n, m, x;
         cin >> n >> m;
-        set<int> hop;
-        int a[n], b[m];
-        for (int &x : a) {
+        set<int> hop, giao;
+        for (int i = 0; i < n; i++) {
             cin >> x;
             hop.insert(x);
         }
-        for (int &x : b){
+        for (int i = 0; i < m; i++){
             cin >> x;
+            if (hop.count(x)) giao.insert(x);
+            
             hop.insert(x);
         }
-        for (int it : hop) cout << it << " ";
+        for (int x : hop) cout << x << " ";
         cout << "\n";
-        set<int> giao(b, b + m);
-        for (int i = 0; i < n; i++){
-            if (giao.find(a[i]) != giao.end()){
-                cout << a[i] << " ";
-            }
-        }
+        for (int x : giao) cout << x << " ";
         cout << "\n";
     }
     return 0;
