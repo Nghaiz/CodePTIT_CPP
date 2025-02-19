@@ -51,7 +51,6 @@ int main(){
             phai -= 2;
         }
 
-        // Print c1 in reverse order
         for (int i = 8 * n * n - 1; i >= 0; i--) {
             cout << c1[i] << " ";
         }
@@ -60,7 +59,6 @@ int main(){
         k = 0;
         tren = 0, duoi = 4 * n - 1, trai = 0, phai = 4 * n - 2;
 
-        // Fill c2 in spiral order
         while (tren <= duoi && trai <= phai) {
             for (int i = tren; i <= duoi; i++) {
                 c2[k++] = a[i][trai];
@@ -81,7 +79,6 @@ int main(){
             phai -= 2;
         }
 
-        // Print c2 in reverse order
         for (int i = 8 * n * n - 1; i >= 0; i--) {
             cout << c2[i] << " ";
         }
